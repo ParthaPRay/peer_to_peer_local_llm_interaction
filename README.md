@@ -48,7 +48,7 @@ flowchart TD
 
 ### 1. **Ollama Configuration:**
 
-#### On Ubuntu or Raspberry Pi:
+#### On Raspberry Pi:
 1. Edit the Ollama service configuration:
    ```bash
    sudo mkdir -p /etc/systemd/system/ollama.service.d
@@ -67,8 +67,30 @@ flowchart TD
 
 4. Verify connectivity from another machine:
    ```bash
-   curl http://<PEER_IP>:11434/api/version
+   curl http://<PEER1_IP>:11434/api/version
    ```
+
+#### On Ubuntu:
+1. Edit the Ollama service configuration:
+   ```bash
+   sudo gedit /etc/systemd/system/ollama.service.d/override.conf
+   ```
+2. Add the following lines:
+   ```
+   [Service]
+   Environment="OLLAMA_HOST=0.0.0.0"
+   ```
+3. Reload and restart the Ollama service:
+   ```bash
+   sudo systemctl daemon-reload
+   sudo systemctl restart ollama
+   ```
+
+4. Verify connectivity from another machine:
+   ```bash
+   curl http://<PEER2_IP>:11434/api/version
+   ```
+
 
 ---
 
