@@ -123,7 +123,9 @@ The system records the following metrics for both peers:
   - Total duration
   - Load duration
   - Prompt evaluation counts and durations
+  - Eval count and eval duration
   - Tokens processed per second
+  - Response from peer1 and peer2
 - **Network Latency:** Time taken for requests between peers.
 
 ---
