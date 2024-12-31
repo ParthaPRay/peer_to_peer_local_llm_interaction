@@ -110,8 +110,18 @@ The system records the following metrics for both peers:
 
 | Peer1 Models               | Peer2 Models               |
 |----------------------------|----------------------------|
-| `qwen2.5:0.5b-instruct`    | `granite3.1-moe:1b`        |
+| `qwen2.5:0.5b-instruct` | `granite3.1-moe:1b`        |
+| `qwen2.5:0.5b-instruct` | `llama3.2:1b`           |
+| `qwen2.5:0.5b-instruct`  | `qwen2.5:1.5b`        |
+| `qwen2.5:0.5b-instruct` | `smollm2:1.7b`           |
+| `smollm2:360m-instruct-q8_0` | `granite3.1-moe:1b`        |
+| `smollm2:360m-instruct-q8_0` | `llama3.2:1b`           |
+| `smollm2:360m-instruct-q8_0`  | `qwen2.5:1.5b`        |
 | `smollm2:360m-instruct-q8_0` | `smollm2:1.7b`           |
+
+
+
+
 
 Each pair is tested under both Flask and FastAPI configurations.
 
